@@ -3,7 +3,9 @@ class CreateUsers < ActiveRecord::Migration[6.0]
     create_table :users do |t|
       t.string :name
       t.string :password_digest
-
+      t.string :status
+      t.string :image
+      
       t.timestamps
     end
   end
