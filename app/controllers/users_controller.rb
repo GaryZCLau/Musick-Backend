@@ -12,7 +12,7 @@ class UsersController < ApplicationController
     end
 
     def create
-      @user = User.create(user_params())
+      @user = User.create(params.permit(:name, :password, :image, :status))
       if @user.valid?
         wristband = encode_token({user_id: @user.id})
         render json: {
@@ -25,7 +25,7 @@ class UsersController < ApplicationController
     end
   
     def login
-      @user = User.find_by(username: params[:username])
+      @user = User.find_by(name: params[:name])
       if @user && @user.authenticate(params[:password])
         wristband = encode_token({user_id: @user.id})
         render json: {
@@ -49,7 +49,7 @@ class UsersController < ApplicationController
     private
   
     def user_params
-      params.permit(:username, :password)
+      params.permit(:name, :password)
     end
   
 end
