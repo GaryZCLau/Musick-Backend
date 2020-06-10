@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   post '/users', to: 'users#create'
   post '/users/login', to: "users#login"
   delete '/activities/:id', to: 'activities#destroy'
+  post '/activities', to: 'activities#create'
   resources :activities
   resources :friends
   resources :users
