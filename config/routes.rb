@@ -2,6 +2,7 @@ Rails.application.routes.draw do
   get '/users/stay_logged_in', to: 'users#stay_logged_in'
   post '/users', to: 'users#create'
   post '/users/login', to: "users#login"
+  delete '/activities/:id', to: 'activities#destroy'
   resources :activities
   resources :friends
   resources :users

@@ -13,4 +13,11 @@ gary = User.create(name: "Gray", password: "123", status: "Test status", image: 
 ruby = User.create(name: "Ruby", password: "123", status: "Ruby test status", image: "https://media.geeksforgeeks.org/wp-content/cdn-uploads/20190902124355/ruby-programming-language.png")
 
 activity1 = Activity.create(title: "Sleep On It", user_id: gary.id)
+activity2 = Activity.create(title: "How Deep Is Your Love", user_id: gary.id)
+activity3 = Activity.create(title: "Officially Missing You", user_id: gary.id)
+activity4 = Activity.create(title: "Island In The Sun", user_id: gary.id)
+activity5 = Activity.create(title: "Focus", user_id: gary.id)
+activity6 = Activity.create(title: "True Colors", user_id: gary.id)
+activity7 = Activity.create(title: "Dragonball Durag", user_id: gary.id)
+
 
