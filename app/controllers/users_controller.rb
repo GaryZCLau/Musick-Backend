@@ -6,7 +6,6 @@ class UsersController < ApplicationController
         render json: @users
     end
 
-
     def create
       @user = User.create(params.permit(:name, :password, :image, :status))
       if @user.valid?
@@ -18,6 +17,12 @@ class UsersController < ApplicationController
       else
         render json: {message: "Failed to create a new user"}, status: 403
       end
+    end
+
+    def update
+      @user = User.find(params[:id])
+      @user.update(params.permit(:image, :status))
+      render json: @user
     end
   
     def login
